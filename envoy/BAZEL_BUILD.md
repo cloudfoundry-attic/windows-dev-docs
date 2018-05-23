@@ -3,8 +3,8 @@
 ## Prerequisites
 * C++ Bazel workspace with a flavored `mingw` toolchain 
   * Example: https://github.com/greenhouse-org/examples/tree/mingw-bazel/cpp-tutorial/stage1
-* [Docker CE for Windows](https://store.docker.com/editions/community/docker-ce-desktop-windows)
 * Windows Dev Machine (Dockerfile requires 1803)
+* [Docker CE for Windows](https://store.docker.com/editions/community/docker-ce-desktop-windows)
 
 ## Build instructions
 1. `docker build -t bazel_mingw .`
