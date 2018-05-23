@@ -8,8 +8,8 @@
 
 ## Build instructions
 1. `docker build -t bazel_mingw .`
-1. `docker run -v c:/<BAZEL_WORKSPACE>:c:/bazel_workspace bazel_mingw <PACKAGE>
+1. `docker run -v c:/<BAZEL_WORKSPACE>:c:/bazel_workspace bazel_mingw <BAZEL PACKAGE>`
 
-## Debug instructions
-1. `docker run -v c:/<BAZEL_WORKSPACE>:c:/bazel_workspace --entrypoint powershell bazel_mingw 
+## Debug instructions`
+1. `docker run -v c:/<BAZEL_WORKSPACE>:c:/bazel_workspace --entrypoint powershell bazel_mingw` 
 1. `cd /bazel_workspace; bazel build --config=mingw <PACKAGE>`
