@@ -12,5 +12,5 @@
 
 ## Debug instructions`
 1. `docker run -v c:/<BAZEL_WORKSPACE>:c:/bazel_workspace --entrypoint powershell bazel_mingw` 
-1. `cd /bazel_workspace`
+1. `cd c:\bazel_workspace`
 1. `bazel build --config=mingw <BAZEL_PACKAGE>`
