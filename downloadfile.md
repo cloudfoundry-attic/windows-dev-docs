@@ -8,13 +8,11 @@ ell-builder/releases/download/1709.8/agent.zip" -OutFile ".\bosh-agent.zip"
 
 ### Example of copying files recursively
 
+The below small powershell script is to copy files/folders recursively between locations. 
 
-$from = 'c:\sources'
-
+```$from = 'c:\sources'
 $to = 'c:\build'
-
-Now it’s a trivial solution:
-
 Get-ChildItem -Path $from | % { 
   Copy-Item $_.fullname "$to" -Recurse -Force
 }
+```
