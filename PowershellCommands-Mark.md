@@ -45,30 +45,51 @@ Get-Process
 Kill process(es) by name
 Get-Process -Name <name> | Stop-Process
 
-Event log stuff
+### Event log stuff
 There are many event logs, the ones you are likely interested in are Application, System, and Security. The Application log includes events from Windows and user-provided apps such as the bosh-agent. The System log has more OS-level and driver logs.
+
 Get all events
+
 Get-EventLog -LogName <LogName>
+
 Get latest X events
+
 (Get-EventLog -LogName <LogName>)[0..<X>]
+
 Show full messages (and some other useful fields) for events
+
 Get-EventLog -LogName <LogName> | fl EventID, EntryType, Message, Source, TimeGenerated
+
 Show reboots
+
 Get-EventLog -LogName System | where { $_.EventID -eq 6005 }
 
 ### Random stuff
 `watch`
+
 while ($true) { clear; date; <Command>; Start-Sleep 1 }
+
 Run until it fails
+
 while (<Command>) { echo "Succeeded, sleeping for 1 second"; Start-Sleep 1 }
+
 Formatting output
+
 Running a powershell command and not seeing all of the columns you expect? Try piping it to Format-List * (or fl *) to see all of the available columns. You can also show specific columns by piping to Format-List column-name, other-column-name, ...
+
 Aliases
+
 Common unix commands such as cd, ls, cat, and rm will Do The Right Thing™ in powershell. See full list here
+
 Setting the PATH
+
+
 Setting $env:PATH only affects your current shell session:
+
 $env:path += ";<PathToThing>”
+
 To set the PATH globally, you can do the following:
+
 $oldPath = [Environment]::GetEnvironmentVariable("Path",[System.EnvironmentVariableTarget]::Machine)
 [Environment]::SetEnvironmentVariable("Path", $oldPath + "<PathToThing>", [EnvironmentVariableTarget]::Machine)
 
