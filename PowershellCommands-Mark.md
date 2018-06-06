@@ -1,27 +1,25 @@
 ## File stuff
 
 ### Tail (live) a file
-Get-Content -Wait <filename>
+- Get-Content -Wait <filename>
 ### Show the first X lines of a file
-Get-Content -Head <x> <filename>
+- Get-Content -Head <x> <filename>
 ### Show the last X lines of a file
-Get-Content -Tail <x> <filename>
+- Get-Content -Tail <x> <filename>
 ### Write to a file
-Set-Content <filename> <contents>
-
-“<contents>” | Set-Content <filename>
+- Set-Content <filename> <contents> 
+- “<contents>” | Set-Content <filename>
 ### Append to a file
-Add-Content <filename> <contents>
-
-“<contents>” | Add-Content <filename>
+- Add-Content <filename> <contents>
+- “<contents>” | Add-Content <filename>
 ### Find text in a file
-Select-String <pattern> -Path <filename>
+- Select-String <pattern> -Path <filename>
 ### Find text recursively in a directory
-Get-ChildItem -Recurse <directory> | Select-String <pattern>
+- Get-ChildItem -Recurse <directory> | Select-String <pattern>
 
 ## Network stuff
 Download something
-Invoke-WebRequest -UseBasicParsing -Uri http://url/of/file.ext -OutFile filename.ext
+- Invoke-WebRequest -UseBasicParsing -Uri http://url/of/file.ext -OutFile filename.ext
 
 ### Download something faster (by turning off the progress bar)
 $progressPreference = 'SilentlyContinue'
@@ -58,7 +56,7 @@ Get-EventLog -LogName <LogName> | fl EventID, EntryType, Message, Source, TimeGe
 Show reboots
 Get-EventLog -LogName System | where { $_.EventID -eq 6005 }
 
-Random stuff
+### Random stuff
 `watch`
 while ($true) { clear; date; <Command>; Start-Sleep 1 }
 Run until it fails
