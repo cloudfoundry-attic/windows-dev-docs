@@ -11,6 +11,8 @@ ell-builder/releases/download/1709.8/agent.zip" -OutFile ".\bosh-agent.zip"
 
 The below small powershell script is to copy files/folders recursively between locations. 
 
+Copy-Item .\bosh-modules\* 'C:\Program Files\WindowsPowerShell\Modules\' -Recurse
+
 ```$from = 'c:\sources'
 $to = 'c:\build'
 Get-ChildItem -Path $from | % { 
